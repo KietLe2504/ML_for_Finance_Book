@@ -1,0 +1,88 @@
+Exercise 1.1:
+
+1. Ở câu này, bài toán đã cho ta giả định đã biết alpha.
+Gọi w là trọng số đặt vào payoff V1 (0 =< w< =1). 
+Nghĩa là bạn sẽ có xác suất w để nhận được V1 và xác suất 1-w để nhận được V2.
+
+lúc đấy, ta có giá trị nhận về là 
+V = w*V1 + (1-w)*V2
+
+Ta phải tính giá trị kỳ vọng của V, tức là E[V] = E[w*V1 + (1-w)*V2] = w*E[V1] + (1-w)*E[V2].
+E[V] = w*E[V1] + (1-w)*E[V2]=w*p/alpha + (1-w)(1-p)/1-alpha
+     = (w*p -alpha*w -p*alpha)/(alpha*(1-alpha))  + 1/(1-alpha)
+Mục tiêu của chúng ta là tìm w sao cho E[V] không phụ thuộc vào p.
+
+Để E[V] không phụ thuộc vào p, chúng ta cần loại bỏ các phần tử chứa p trong biểu thức của E[V].
+Để làm vậy ta chỉ cần nhóm p lại với nhau.
+
+E[V] = ((w-alpha)*p - alpha*w)/(alpha*(1-alpha)) + 1/(1-alpha)
+=> Để E[V] không phụ thuộc vào p thì w = alpha.
+Lúc đó E[V] = 1/(1-alpha) - alpha*alpha/(alpha*(1-alpha)) = 1/(1-alpha) - alpha/(1-alpha) = (1-alpha)/(1-alpha) = 1.
+
+2. Ở câu này thì lại cho biết ở cả 2 phía. Giờ thì làm sao để alpha sao cho player 1 sinh lời nhất.
+Hay là nói cách khác là để player thu lợi ít nhất.
+Như khi nãy ta đã biết nếu ta biết xác suất p rồi thì player 2 sẽ lựa chọn payoff dựa trên kỳ vọng mà playoff ấy đưa ra.
+Nghĩa là player 2 sẽ chọn payoff V1 nếu E[V1] > E[V2] và chọn payoff V2 nếu E[V2] > E[V1].
+Từ đó ta sẽ tìm cách:
+Tối thiểu hóa max(E[V1], E[V2]) = max(E[V1], E[V2]) = max(p/alpha, (1-p)/(1-alpha))
+Mà để tối thiểu hóa max(E[V1], E[V2]), ta cần tìm alpha sao cho p/alpha = (1-p)/(1-alpha).
+hay alpha = p. Khi đó E[V1] = E[V2] = 1. Vậy player 1 sẽ thu lợi ít nhất là 1.
+
+Thật vậy, nếu ta chọn p* > p thì E[V1] = p*/alpha > 1 và E[V2] = (1-p*)/(1-alpha) < 1. Khi đó player 2 sẽ chọn V1 và player 1 sẽ thu lợi nhiều hơn 1.
+
+3. Với câu này thì khi G = 1 đồng nghĩa ở 2 payoff nó đêu nhảy xác suất ở trường hợp p.
+Lúc đó thì payoff V1 = 1/aplha và V2 = 0 
+Suy ra là player 2 sẽ chọn payoff V1 và player 1 sẽ thu lợi ít nhất là 1/alpha.
+
+4. Result = 1/alpha**i
+với i là số vòng chơi.
+
+Execise 1.2:
+
+1. Giả sử n samples có n/2 samples B và n/2 samples C. 
+total absolute error của f= n/2 (nghĩa là f luôn dự đoán là B nên nó sai một nữa)
+total absolute error của g = n/2 (tương tự)
+total absolute error của h = n/2 (vì xác suất h dự đoán ra B mà sample thực sự là C = 0.25, và xác suất h dự đoán ra C mà sample thực sự là B = 0.25, tổng cộng là 0.5*n = n/2)
+
+2. Từ câu 1,
+ta thấy xác suất f dự đoán đúng = 0.5, xác suất g dự đoán đúng = 0.5, xác suất h dự đoán đúng = 0.5.
+
+3. Giả sử ta chọn f làm hàm dự đoán chẳng hạn.
+khi đó, p = f(x) với x =(0,1) thì f luôn luôn dự đoán là B. Trong khi đó, sample có khả năng xảy ra C hoặc B.
+Nghĩa là lúc này p sẽ có giá trị là 1 hoặc 0 (Chắc chắn đúng hoặc chắc chắn sai)
+
+Mà ta lại có alpha = 1-p nên giả sử p = 1 thì aplha = 0.
+Vậy là payoff V1 = 1/alpha = 1/0 = vô cùng, và payoff V2 = 0. Khi ấy, player 2 sẽ chọn payoff V1.
+Dẫn đến mất mát mà player 1 phải chịu là vô cùng (unbounded).
+
+Tương tự với p =0 và g làm hàm dự đoán.
+
+4. Giả định dùng hàm h làm hàm dự đoán. 
+Khi đó, p = h(x) với x =(0,1) thì h dự đoán ra B hoặc C với xác suất 0.5.
+Nghĩa là lúc này p sẽ có giá trị là 0.5, và alpha = 1-p = 0.5.
+Lúc đó payoff V1 = 1/alpha = 1/0.5 với xác suất 0.5 và payoff V2 = 2 với xác suất 0.5.
+hay nói cách khác expected payoff khi chọn 1 trong 2 payoff đều là = 1.
+Lúc này player 1 chỉ mất mát là 1, không bị unbounded như khi chọn f hoặc g.
+
+Exercise 1.3:
+1. Với likelihood = 1, điều này nghĩa là mô hình dự đoán chính xác tất cả các mẫu.
+Vậy nên là số similiar models với likelihood = 1 is 1, vì chỉ có duy nhất một model dự đoán chính xác tất cả các mẫu.
+
+2. 4 disimilar models with likelihood = 0.9 
++ P(A|x1) =1, P(B|x2) =1, P(C|x3) =1, P(C|x3) =0.9. Likelihood = 1*1*1*0.9 = 0.9
++ P(A|x1) =1, P(B|x2) =1, P(C|x3) =0.9, P(C|x3) =1. Likelihood = 1*1*0.9*1 = 0.9
++ P(A|x1) =1, P(B|x2) =0.9, P(C|x3) =1, P(C|x3) =1. Likelihood = 1*0.9*1*1 = 0.9
++ P(A|x1) =0.9, P(B|x2) =1, P(C|x3) =1, P(C|x3) =1. Likelihood = 0.9*1*1*1 = 0.9
+
+Thật vậy , ở mô hình 1 và 2 có P(C|x3) = 0.9 và 1 không lớn hơn 0.95 nên nó không phải là similar models. Tương tự với mô hình 3 và 4.
+Vậy nên với trường hợp này có vô số mô hình.
+
+3. Với likelihood = 0.95.
+Và để không được coi là similar models thì các mô hình phải có ít nhất 1 sample mà likelihood < 0.95.
+Nếu coi như các xác suất còn lại là 1 thì likelihood của mô hình sẽ là 0.95.
+Chỉ cần giảm đi một chút ở một sample thì likelihood sẽ < 0.95 và không thỏa mãn đề bài.
+
+Vậy nếu có 4 samples thì số lượng mô hình không giống nhau với likelihood = 0.95 là 4, vì chỉ cần giảm đi một chút ở một sample thì likelihood sẽ < 0.95 và không thỏa mãn đề bài.
+
+
+
