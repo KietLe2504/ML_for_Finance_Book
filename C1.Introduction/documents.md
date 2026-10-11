@@ -32,8 +32,8 @@ Phần 2: Phân loại Học Máy.
 Học máy là một lĩnh vực rộng lớn và có thể được phân loại thành ba loại chính: học có giám sát (supervised learning), học không giám sát (unsupervised learning), và học tăng cường (reinforcement learning).
 - Với học có giám sát, mô hình được huấn luyện trên một tập dữ liệu đã được gán nhãn, nghĩa là mỗi đầu vào đều có một đầu ra tương ứng. Mục tiêu của học có giám sát là học cách dự đoán đầu ra từ đầu vào mới dựa trên các mẫu đã học. 
 Ví dụ, trong lĩnh vực tài chính, học có giám sát có thể được sử dụng để dự đoán giá cổ phiếu dựa trên các đặc trưng như khối lượng giao dịch, giá mở cửa, và các chỉ số kinh tế.
-Cụ thể hơn, Học giám sát xác định hàm hay là một hộp đen F đến nhận đầu vào là dữ liệu X, đầu ra là Y. 
-Mục tiêu làm sao đó để xây dựng hộp đen nhận X có kết quả dự đoán Y' gần với Y nhất'.
+Cụ thể hơn, Học giám sát xác định hàm hay là một hộp đen F đến nhận đầu vào là dữ liệu X, đầu ra là Y'. 
+Mục tiêu làm sao đó để xây dựng hộp đen nhận X có kết quả dự đoán Y' gần với dữ liệu Y nhất'.
 - Với học không giám sát, mô hình được huấn luyện trên một tập dữ liệu chưa được gán nhãn, nghĩa là không có đầu ra tương ứng. Mục tiêu của học không giám sát là tìm kiếm các mẫu và cấu trúc ẩn trong dữ liệu. 
 Ví dụ, trong lĩnh vực tài chính, học không giám sát có thể được sử dụng để phân nhóm các khách hàng dựa trên hành vi tiêu dùng hoặc để phát hiện các giao dịch bất thường.
 - Với học tăng cường, mô hình học thông qua việc tương tác với môi trường và nhận phản hồi dưới dạng phần thưởng hoặc hình phạt. Mục tiêu của học tăng cường là học cách đưa ra các quyết định tối ưu để đạt được phần thưởng tối đa theo thời gian.
