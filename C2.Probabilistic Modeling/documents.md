@@ -202,4 +202,10 @@ Trái lại, Ta định nghĩa M2 cho rằng xác suất ra mặt nghĩa là m�
 
 Từ những dự kiện trên, model evidence M1 là 0.005956, model evidence là 0.004975. => logarit của  posterior odds ratio = 1.2 => chưa đủ để kết luận giả thuyết ở mô hình 1.
 
-*Probabilistic Graphical Model 
+*Probabilistic Graphical Model.
+Tác giả bắt đầu với việc gợi nhớ đến mô hình phân loại logistic regression, mục đích để chỉ rõ cách hồi quy tuyến tính với trọng số xác suất lại có thể xem là một mô hình đò thị xác suất cơ bản.
+
+Thì bắt đầu với việc triển khai công thức sigmoid dùng trong logistic và công thức qua định lý bayes, đối chiếu và tương ứng thì ta sẽ thấy được trọng số và bias của một mạng neuron cơ bản với activate function là hàm sigmoid sẽ tương ứng với likelihood và log-odds ratio.
+
+Ở fig 2.3 là minh họa chi tiết hơn cho điều đó. Ở hình a, có bao gồm trọng số (Bias nằm bên trong đó) bias = -0.2. G là biến nhị phân (đẩu ra của dự đoán)
+
